@@ -17,5 +17,6 @@ app.get('/', (req, res) => {
 })
 
 
-//express tells node it wants to listen for incoming traffic on port 5000
+//express tells node it wants to listen for incoming traffic on port 5000 or env var port. dev/prod etc
+const PORT = process.env.PORT || 5000;
 app.listen(5000);
