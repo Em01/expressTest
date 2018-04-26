@@ -15,5 +15,15 @@ passport.use(
   })
 );
 
+//callback url is for after user grants permission. Then starts oauth process managed by passport.
+
+
+app.get(
+  '/auth/google',
+  passport.authenticate('google', {
+    scope: ['profile', 'email']
+  })
+);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
