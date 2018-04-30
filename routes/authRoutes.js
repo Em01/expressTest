@@ -14,4 +14,8 @@ module.exports = (app) => {
   //second time with code and google strategy will exchange the code for user profile.
   app.get('/auth/google/callback', passport.authenticate('google'));
 
+  app.get('/api/current_user', (req, res) => {
+    res.send(req.user);
+  });
+
 };
